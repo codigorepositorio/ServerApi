@@ -1,7 +1,5 @@
 using AutoMapper;
 using Demo.WebApi.NetCore.Contracts;
-using Demo.WebApi.NetCore.Dapper.Repository;
-using Demo.WebApi.NetCore.Dapper.Interfaz;
 using Demo.WebApi.NetCore.Dto;
 using Demo.WebApi.NetCore.Entities;
 using Demo.WebApi.NetCore.Repository;
@@ -13,6 +11,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Demo.WebApi.NetCore.Bussiness.Logic.Services;
+using Demo.WebApi.NetCore.Apis.Extensions;
+using Demo.WebApi.NetCore.Dapper.Common;
 
 namespace Demo.WebApi.NetCore.Apis
 {
@@ -34,14 +35,26 @@ namespace Demo.WebApi.NetCore.Apis
 
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProductServices, ProductServices>();
+
             services.AddScoped<ProductService>();
             services.AddScoped<CategoryService>();
+            services.AddScoped<AlumnoService>();
+
+            services.AddScoped<IServiceAlumnoBL, ServiceAlumnoBL>();
 
 
-            //Dapper
-            services.AddScoped<IDapperCategoryRepository, DapperCategoryRepository>();
+            //Dapper 
 
+            services.AddSingleton<IConfiguration>(Configuration);
+            Global.ConnectionString = Configuration.GetConnectionString("dapper");
 
+            services.ConfigureDapperSql();
+
+            
+
+            //Ado.Net
+
+            
 
             services.Configure<ApiBehaviorOptions>(options =>
             {
@@ -61,7 +74,7 @@ namespace Demo.WebApi.NetCore.Apis
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.ConfigureCors();
             app.UseRouting();
 
             app.UseAuthorization();

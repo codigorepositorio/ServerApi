@@ -18,5 +18,7 @@ namespace Demo.WebApi.NetCore.Entities.Models
         [ForeignKey(nameof(Category))]
         public int CategoryID { get; set; }
         public Category category { get; set; }
+
+        public string Message { get; set; }
     }
 }

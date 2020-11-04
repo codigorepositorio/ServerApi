@@ -2,7 +2,7 @@
 using Demo.WebApi.NetCore.Dto.DataTransferObjects.Category;
 using Demo.WebApi.NetCore.Entities.Models;
 
-namespace Demo.WebApi.NetCore.Apis.Mapper
+namespace Demo.WebApi.NetCore.Apis.AutoMapper
 {
     public class MappingProfileCategoria : Profile
     {

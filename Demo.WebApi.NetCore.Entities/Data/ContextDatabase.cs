@@ -8,6 +8,7 @@ namespace Demo.WebApi.NetCore.Entities
         public ContextDatabase(DbContextOptions options) : base(options) { }
         public DbSet<Product> Product { get; set; }
         public DbSet<Category> Category{ get; set; }
-  
+
+        public DbSet<Product> Alumno { get; set; }
     }
 }

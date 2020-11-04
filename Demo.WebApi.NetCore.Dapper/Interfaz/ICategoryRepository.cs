@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Demo.WebApi.NetCore.Dapper.Interfaz
 {
-    public interface IDapperCategoryRepository
+    public interface ICategoryRepository
     {
         Task<List<Category>> GetAll();
         Task<Category> GetById(int Id);

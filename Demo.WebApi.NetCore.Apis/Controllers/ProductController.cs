@@ -21,6 +21,9 @@ namespace Demo.WebApi.NetCore.Apis.Controllers
         public async Task<IActionResult> GetAllProducts()
         {
             var products = await _productService.GetAllProducts();
+            if (products == null )
+                return StatusCode(500, "Internal server error");
+
             return Ok(products);
         }
 

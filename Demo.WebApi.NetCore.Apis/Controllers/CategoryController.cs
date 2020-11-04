@@ -49,31 +49,5 @@ namespace Demo.WebApi.NetCore.Apis.Controllers
             return NoContent();
         }
 
-        [Route("{contador}/While")]
-        [HttpGet]
-        public ActionResult<string> ContadoresWhile(int contador)
-        {
-            var x = 1;
-
-            List<string> cadenas = new List<string>();
-            string[] weekDays = new string[contador];
-    
-            while (x < contador)
-            {
-
-                x++;
-                
-                if (x % 2 == 0)
-                {
-                    
-                    if (x.ToString()!= null)
-                    {
-                        cadenas.Add(x.ToString());
-                    }
-                }
-            }
-
-            return Ok(cadenas);
-        }
-    }
+   }
 }

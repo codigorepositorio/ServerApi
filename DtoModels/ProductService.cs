@@ -55,7 +55,6 @@ namespace Demo.WebApi.NetCore.Dto
                 return new BadRequestObjectResult ($"Producto No existe: {Id}");
 
             if (productDto == null)
-                //return new BadRequestObjectResult($"productDto is null:");
               return  new UnprocessableEntityObjectResult(productDto);
 
             var productEntity = _mapper.Map<Product>(productDto);

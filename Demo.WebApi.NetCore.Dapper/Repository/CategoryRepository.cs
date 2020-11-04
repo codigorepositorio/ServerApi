@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Demo.WebApi.NetCore.Dapper.Common;
 using Demo.WebApi.NetCore.Dapper.Interfaz;
 using Demo.WebApi.NetCore.Entities.Models;
 using Microsoft.Extensions.Configuration;
@@ -11,11 +12,11 @@ using System.Threading.Tasks;
 
 namespace Demo.WebApi.NetCore.Dapper.Repository
 {
-    public class DapperCategoryRepository : IDapperCategoryRepository
+    public class CategoryRepository : ICategoryRepository
     {
         private readonly IDbConnection dbConection;
 
-        public DapperCategoryRepository(IConfiguration configuration)
+        public CategoryRepository(IConfiguration configuration)
         {
 
             dbConection = new SqlConnection(configuration.GetConnectionString("cn-dapper"));

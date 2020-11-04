@@ -28,7 +28,8 @@ namespace Demo.WebApi.NetCore.Repository
 
         public bool Create(Product product)
         {
-            _contextDatabase.Product.Add(product);            
+            _contextDatabase.Product.Add(product);
+            _contextDatabase.SaveChanges();
             return true;
         }
         public bool Update(Product product)
