@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Demo.WebApi.NetCore.Entities;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Demo.WebApi.NetCore.Apis.Extensions
@@ -24,5 +27,9 @@ namespace Demo.WebApi.NetCore.Apis.Extensions
               .AllowAnyMethod());
             return app;
         }
+
+        public static void ConfigureSqlContext(this IServiceCollection services,IConfiguration configuration) =>
+        services.AddDbContext<ContextDatabase>(opts =>
+        opts.UseSqlServer(configuration.GetConnectionString("sqlConnection"), b =>b.MigrationsAssembly("CompanyEmployees")));
     }
 }

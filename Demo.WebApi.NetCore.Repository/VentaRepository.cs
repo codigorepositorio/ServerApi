@@ -2,6 +2,7 @@
 using Demo.WebApi.NetCore.Entities;
 using Demo.WebApi.NetCore.Entities.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 namespace Demo.WebApi.NetCore.Repository
 {
     public class VentaRepository : IVentaRepository
@@ -12,7 +13,7 @@ namespace Demo.WebApi.NetCore.Repository
             _contextDatabase = contextDatabase;
         }
 
-        public bool Create(Venta venta,DetalleVenta detalleventa)
+        public bool Create(Venta venta,DetalleVenta detalleVenta)
         {
             try
             {
@@ -28,8 +29,8 @@ namespace Demo.WebApi.NetCore.Repository
                     else
                         _contextDatabase.Entry(item).State = EntityState.Modified;                    
                 }
-
-                foreach (var item in detalleventa.SubDetalleVenta)
+                
+                foreach (var item in venta.DetalleVenta.SelectMany(sub => sub.SubDetalleVenta))
                 {
                     if (item.DetalleVentaId == 0)
                         _contextDatabase.SubDetalleVenta.Add(item);

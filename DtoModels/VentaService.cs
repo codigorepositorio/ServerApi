@@ -23,16 +23,15 @@ namespace Demo.WebApi.NetCore.Dto
         }
 
 
-
-        public bool Create(VentaForCreation ventaForCreation, DetalleVentaForCreation detalleVenta)
+        public bool Create(VentaForCreation ventaForCreation, DetalleVentaForCreation detalleVentas)
         {
             var ventatEntity = _mapper.Map<Venta>(ventaForCreation);
 
-            var detalleVentaEntity = _mapper.Map<DetalleVenta>(detalleVenta);
+            var detalleVentaEntity = _mapper.Map<DetalleVenta>(detalleVentas);
 
-            var category =  _ventaServices.Create(ventatEntity, detalleVentaEntity);            
+            var venta =  _ventaServices.Create(ventatEntity, detalleVentaEntity);            
 
-            return category;
+            return venta;
         }
 
         

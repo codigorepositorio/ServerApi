@@ -60,7 +60,14 @@ namespace Demo.WebApi.NetCore.Apis
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddAutoMapper(typeof(Startup));
-            services.AddControllers();
+            services.ConfigureSqlContext(Configuration);
+
+            services.AddControllers()
+                .ConfigureApiBehaviorOptions(options =>
+                {                    
+                    options.SuppressInferBindingSourcesForParameters = true;
+        
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

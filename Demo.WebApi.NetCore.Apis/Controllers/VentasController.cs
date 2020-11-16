@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Demo.WebApi.NetCore.Dto;
+﻿using Demo.WebApi.NetCore.Dto;
 using Demo.WebApi.NetCore.Dto.DataTransferObjects.Venta;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Demo.WebApi.NetCore.Apis.Controllers
@@ -21,9 +16,9 @@ namespace Demo.WebApi.NetCore.Apis.Controllers
         }
 
         [HttpPost]
-        public IActionResult SaveVentas([FromBody] VentaForCreation ventaForCreation, DetalleVentaForCreation detalleVenta)
+        public IActionResult SaveVentas([FromBody] VentaForCreation ventaForCreation,  DetalleVentaForCreation detalleVentas)
         {
-            var result = _ventaService.Create(ventaForCreation, detalleVenta);
+            var result = _ventaService.Create(ventaForCreation, detalleVentas);
             return Ok(result);
         }
     }
