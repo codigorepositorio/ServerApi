@@ -36,26 +36,22 @@ namespace Demo.WebApi.NetCore.Apis
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProductServices, ProductServices>();
 
+            services.AddScoped<IVentaRepository, VentaRepository>();
+            services.AddScoped<IVentaServices, VentaServices>();
+
             services.AddScoped<ProductService>();
             services.AddScoped<CategoryService>();
             services.AddScoped<AlumnoService>();
-
+            services.AddScoped<VentaService>();
             services.AddScoped<IServiceAlumnoBL, ServiceAlumnoBL>();
-
 
             //Dapper 
 
             services.AddSingleton<IConfiguration>(Configuration);
             Global.ConnectionString = Configuration.GetConnectionString("dapper");
-
             services.ConfigureDapperSql();
 
-            
-
             //Ado.Net
-
-            
-
             services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.SuppressModelStateInvalidFilter = true;
@@ -74,9 +70,16 @@ namespace Demo.WebApi.NetCore.Apis
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.ConfigureCors();
-            app.UseRouting();
+            else
+            {
+                app.UseHsts();
+            }
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
 
+            app.ConfigureCors();
+
+            app.UseRouting();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

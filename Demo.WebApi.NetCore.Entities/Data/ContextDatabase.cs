@@ -10,5 +10,9 @@ namespace Demo.WebApi.NetCore.Entities
         public DbSet<Category> Category{ get; set; }
 
         public DbSet<Product> Alumno { get; set; }
+        public DbSet<Venta> Venta { get; set; }
+        public DbSet<DetalleVenta> DetalleVenta { get; set; }
+        public DbSet<SubDetalleVenta>SubDetalleVenta { get; set; }
+
     }
 }

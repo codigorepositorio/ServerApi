@@ -35,6 +35,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06.BussinessLogic", "06.Bus
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.WebApi.NetCore.Bussiness.Logic", "Demo.WebApi.NetCore.Bussiness.Logic\Demo.WebApi.NetCore.Bussiness.Logic.csproj", "{21DCA64C-D15F-4616-9AEF-69E21CD883CA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07.Signalr", "07.Signalr", "{6BBEACE9-020B-47D2-80CD-0FAE15D32783}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.WebApi.NetCore.RealTimeCharts_Server", "Demo.WebApi.NetCore.RealTimeCharts_Server\Demo.WebApi.NetCore.RealTimeCharts_Server.csproj", "{9B216684-7223-486D-AE2F-E6B410126676}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +81,10 @@ Global
 		{21DCA64C-D15F-4616-9AEF-69E21CD883CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21DCA64C-D15F-4616-9AEF-69E21CD883CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21DCA64C-D15F-4616-9AEF-69E21CD883CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B216684-7223-486D-AE2F-E6B410126676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B216684-7223-486D-AE2F-E6B410126676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B216684-7223-486D-AE2F-E6B410126676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B216684-7223-486D-AE2F-E6B410126676}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +98,7 @@ Global
 		{6C29D8BE-2211-463C-8B77-3D36736FD463} = {33534429-3E7F-473F-991C-2A3EFB9AD264}
 		{C2E92A10-1A70-498C-8AC1-D7EC82D714E3} = {33534429-3E7F-473F-991C-2A3EFB9AD264}
 		{21DCA64C-D15F-4616-9AEF-69E21CD883CA} = {2EE5D596-FC74-4345-B756-B8A839E7D282}
+		{9B216684-7223-486D-AE2F-E6B410126676} = {6BBEACE9-020B-47D2-80CD-0FAE15D32783}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {93641D9B-1B83-45FE-A0E5-ADC2F0E122F1}

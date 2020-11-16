@@ -20,9 +20,9 @@ namespace Demo.WebApi.NetCore.Dto
         }
 
 
-        public async Task<Product> Create(AlumnoForCreation alumnoForCreation)
+        public async Task<Alumno> Create(AlumnoForCreation alumnoForCreation)
         {         
-           var alumnotEntity = _mapper.Map<Product>(alumnoForCreation);
+           var alumnotEntity = _mapper.Map<Alumno>(alumnoForCreation);
            return  await _repositoryWrapper.Alumno.Create(alumnotEntity);
         }
 

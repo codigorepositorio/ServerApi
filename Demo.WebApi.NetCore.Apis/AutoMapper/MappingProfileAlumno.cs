@@ -11,7 +11,7 @@ namespace Demo.WebApi.NetCore.Apis.AutoMapper
         public MappingProfileAlumno()
         {
             //POST: CategoryForCreation                    
-            CreateMap<AlumnoForCreation, Product>()
+            CreateMap<AlumnoForCreation, Alumno>()
             .ForMember(a => a.Nombres, opt => opt.MapFrom(b => b.alumno))
             .ForMember(a => a.ExamenParcial, opt => opt.MapFrom(b => Math.Round(b.notaExamenParcial, 2)))
             .ForMember(a => a.ExamenTrabajo, opt => opt.MapFrom(b => Math.Round(b.notaTrabajos, 2)))

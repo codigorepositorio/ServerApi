@@ -6,5 +6,7 @@ namespace Demo.WebApi.NetCore.Dapper
     {
         IAlumnoRepository Alumno { get; }
         ICategoryRepository Category { get; }
+
+
     }
 }

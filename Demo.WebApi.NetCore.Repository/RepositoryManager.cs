@@ -8,6 +8,8 @@ namespace Demo.WebApi.NetCore.Repository
     {
         private ContextDatabase _repositoryContext;
         private IProductRepository _productRepository;
+
+        private IVentaRepository _ventaRepository;
         public RepositoryManager(ContextDatabase repositoryContext)
         {
             _repositoryContext = repositoryContext;
@@ -21,6 +23,18 @@ namespace Demo.WebApi.NetCore.Repository
                     _productRepository = new ProductRepository(_repositoryContext);
                 }
                 return _productRepository;
+            }
+        }
+
+        public IVentaRepository Venta
+        {
+            get
+            {
+                if (_ventaRepository == null)
+                {
+                    _ventaRepository = new VentaRepository(_repositoryContext);
+                }
+                return _ventaRepository;
             }
         }
 
