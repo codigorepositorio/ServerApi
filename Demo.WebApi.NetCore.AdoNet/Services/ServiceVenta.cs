@@ -28,7 +28,9 @@ namespace Demo.WebApi.NetCore.AdoNet.Services
             {
                 VentaId = ventaForCreation.codigoVenta,
                 Cliente = ventaForCreation.clienteVenta,
-                ImporteTotal = ventaForCreation.totalVenta
+                ImporteTotal = ventaForCreation.totalVenta,
+                DetalleVenta = ventaForCreation.DetalleVenta
+
             };
 
             var resultEnity = await _repositoryVenta.Create(entity);   
