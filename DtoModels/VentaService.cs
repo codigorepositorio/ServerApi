@@ -1,10 +1,5 @@
 ﻿using AutoMapper;
 using Demo.WebApi.NetCore.Entities.Models;
-using Demo.WebApi.NetCore.Dapper.Interfaz;
-using Demo.WebApi.NetCore.Dto.DataTransferObjects.Category;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using Demo.WebApi.NetCore.Dapper;
 using Demo.WebApi.NetCore.Dto.DataTransferObjects.Venta;
 using Demo.WebApi.NetCore.Services;
 
@@ -26,11 +21,8 @@ namespace Demo.WebApi.NetCore.Dto
         public bool Create(VentaForCreation ventaForCreation, DetalleVentaForCreation detalleVentas)
         {
             var ventatEntity = _mapper.Map<Venta>(ventaForCreation);
-
             var detalleVentaEntity = _mapper.Map<DetalleVenta>(detalleVentas);
-
-            var venta =  _ventaServices.Create(ventatEntity, detalleVentaEntity);            
-
+            var venta = _ventaServices.Create(ventatEntity, detalleVentaEntity);           
             return venta;
         }
 

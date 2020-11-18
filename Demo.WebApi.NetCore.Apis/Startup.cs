@@ -14,6 +14,9 @@ using Microsoft.Extensions.Hosting;
 using Demo.WebApi.NetCore.Bussiness.Logic.Services;
 using Demo.WebApi.NetCore.Apis.Extensions;
 using Demo.WebApi.NetCore.Dapper.Common;
+using Demo.WebApi.NetCore.AdoNet.Interfaz;
+using Demo.WebApi.NetCore.AdoNet.Repository;
+using Demo.WebApi.NetCore.AdoNet.Services;
 
 namespace Demo.WebApi.NetCore.Apis
 {
@@ -52,6 +55,9 @@ namespace Demo.WebApi.NetCore.Apis
             services.ConfigureDapperSql();
 
             //Ado.Net
+            services.ConfigureAdoNet();
+         
+
             services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.SuppressModelStateInvalidFilter = true;

@@ -27,7 +27,7 @@ namespace Demo.WebApi.NetCore.Repository
                     if (item.DetalleVentaId == 0)                    
                        _contextDatabase.DetalleVenta.Add(item);                    
                     else
-                        _contextDatabase.Entry(item).State = EntityState.Modified;                    
+                        _contextDatabase.Entry(item).State = EntityState.Modified;                 
                 }
                 
                 foreach (var item in venta.DetalleVenta.SelectMany(sub => sub.SubDetalleVenta))
